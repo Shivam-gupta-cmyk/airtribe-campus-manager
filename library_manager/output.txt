@@ -1,0 +1,25 @@
+--- 1. Borrowing with error handling ---
+Alice borrowed: Book: Python 101 by A. Rao (ID 1)
+Could not borrow: Item 'Python 101' is already borrowed.
+
+--- 2. Borrow-limit and not-borrowed error handling ---
+Bob borrowed: Magazine: Tech Monthly Issue #42 (ID 2)
+Could not borrow: Bob has reached the borrow limit of 1 item(s).
+Could not return: Item 'Inception' was not borrowed by Bob.
+
+--- Return Item & Late Fee ---
+Alice returned 'Python 101' (3 days late). Late fee charged: Rs 6
+
+--- 3. Polymorphism: mixed list late fee calculation ---
+Book: Python 101 by A. Rao (ID 1) -> late fee for 3 days: Rs 6
+Magazine: Tech Monthly Issue #42 (ID 2) -> late fee for 3 days: Rs 3
+DVD: Inception (148 mins, ID 3) -> late fee for 3 days: Rs 15
+
+--- 4. Class attribute shared by all objects ---
+Total items created: 3
+
+--- 5. Encapsulation proof ---
+Accessing item.__available directly failed as expected: 'Book' object has no attribute '__available'
+Accessing availability via is_available(): True
+Alice's current borrowed titles: []
+Bob's current borrowed titles: ['Tech Monthly']
